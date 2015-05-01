@@ -77,6 +77,7 @@ class InventoryGenerator(object):
         """
         self._create_group(group_name)
         self.inventory[group_name]['hosts'].append(host)
+        self.inventory[group_name]['hosts'].sort()
 
         return self
 
@@ -103,6 +104,8 @@ class InventoryGenerator(object):
 
         for grp in child:
             self.inventory[group_name]['children'].append(grp)
+
+        self.inventory[group_name]['children'].sort()
 
         return self
 
