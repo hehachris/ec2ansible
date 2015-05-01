@@ -1,4 +1,3 @@
-import ConfigParser
 from datetime import time
 import json
 import os
