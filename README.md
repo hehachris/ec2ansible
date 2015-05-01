@@ -1,4 +1,4 @@
-# ec2ansible: AWS EC2 inventory generator for Ansible
+# ec2ansible: EC2 inventory generator for Ansible
 
 `ec2ansible` is a cli tool written in Python for generating realtime AWS EC2 inventory for [Ansible](http://docs.ansible.com/).
 
