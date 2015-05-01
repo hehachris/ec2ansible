@@ -1,5 +1,4 @@
 import json
-import six
 from moto import mock_ec2
 
 try:
@@ -180,5 +179,5 @@ class TestEc2Inventory(unittest.TestCase):
             reservation = conn.run_instances(ami_id, private_ip_address=ip)
             instance = reservation.instances[0]
 
-            for k, v in six.iteritems(tags):
+            for k, v in tags.iteritems():
                 instance.add_tag(k, v)

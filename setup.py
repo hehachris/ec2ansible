@@ -34,4 +34,5 @@ setup(
     entry_points=dict(console_scripts=['ec2ansible=ec2ansible.cli:main']),
     test_suite='nose.collector',
     tests_require=tests_require,
+    use_2to3=True,
 )

@@ -53,7 +53,7 @@ class InventoryGenerator(object):
 
             ini.read(self.ini_path)
 
-            for k, v in six.iteritems(self.config):
+            for k, v in self.config.iteritems():
                 if ini.has_option('ec2', k):
                     self.config[k] = ini.get('ec2', k)
 
@@ -158,7 +158,7 @@ class Ec2InventoryGenerator(InventoryGenerator):
 
         regional_children = set()
 
-        for key, region in six.iteritems(self.regions):
+        for key, region in self.regions.iteritems():
             ec2_conn = self._get_ec2_conn(region)
             self._add_hosts_from_region_by_role(ec2_conn)
             regional_children.add(key)
