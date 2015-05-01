@@ -72,8 +72,8 @@ INV_HIERARCHICAL = {
     },
     "use1": {
         "children": [
-            "use1_web_proxy_haproxy",
             "use1_web_apache",
+            "use1_web_proxy_haproxy",
             "use1_web_proxy_nginx"
         ],
         "hosts": [],
@@ -102,8 +102,8 @@ INV_HIERARCHICAL = {
     },
     "web": {
         "children": [
-            "use1_web_proxy_haproxy",
             "use1_web_apache",
+            "use1_web_proxy_haproxy",
             "use1_web_proxy_nginx"
         ],
         "hosts": [],
@@ -140,6 +140,7 @@ INV_HIERARCHICAL = {
     }
 }
 
+
 class TestEc2Inventory(unittest.TestCase):
     def setUp(self):
         super(TestEc2Inventory, self).setUp()
@@ -166,8 +167,8 @@ class TestEc2Inventory(unittest.TestCase):
 
         inv = Ec2InventoryGenerator(DEFAULT_CONFIG).generate()
 
-        self.log.debug(json.dumps(inv, indent=4))
-        self.log.debug(json.dumps(INV_HIERARCHICAL, indent=4))
+        self.log.debug(json.dumps(inv, indent=4, sort_keys=True))
+        self.log.debug(json.dumps(INV_HIERARCHICAL, indent=4, sort_keys=True))
 
         self.assertDictEqual(inv, INV_HIERARCHICAL)
 
