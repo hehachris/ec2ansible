@@ -1,9 +1,9 @@
 import argparse
 import os
-from ec2ansible import Ec2Ansible
+from ec2ansible import Ec2InventoryGenerator
 from os.path import expanduser
 
-default_config = {
+DEFAULT_CONFIG = {
     'default_role': 'default',
 
     'regions': 'all',
@@ -24,8 +24,8 @@ def main():
     if not os.path.isfile(init_path):
         init_path = None
 
-    ec2ansible = Ec2Ansible(default_config, init_path)
-    print ec2ansible.generate()
+    inv = Ec2InventoryGenerator(DEFAULT_CONFIG, init_path).generate()
+    print inv.to_json(0)
 
 
 def parse_args():
