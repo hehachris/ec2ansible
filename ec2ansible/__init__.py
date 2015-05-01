@@ -2,10 +2,11 @@ import ConfigParser
 from datetime import time
 import json
 import os
-import sys
+from six.moves import configparser
 
 from abc import *
 from boto import ec2
+import six
 
 
 class Inventory(dict):
@@ -46,7 +47,11 @@ class InventoryGenerator(object):
 
     def _load_config(self):
         if self.ini_path is not None:
-            ini = ConfigParser.ConfigParser()
+            if six.PY2:
+                ini = configparser.SafeConfigParser()
+            else:
+                ini = configparser.ConfigParser()
+
             ini.read(self.ini_path)
 
             for k, v in self.config.iteritems():

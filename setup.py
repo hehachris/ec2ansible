@@ -4,7 +4,8 @@ import sys, os
 version = '0.1.1'
 
 install_requires = [
-    'boto'
+    'boto',
+    'six',
 ]
 
 tests_require = [
