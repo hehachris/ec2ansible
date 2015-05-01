@@ -170,7 +170,7 @@ class TestEc2Inventory(unittest.TestCase):
         self.log.debug(json.dumps(inv, indent=4, sort_keys=True))
         self.log.debug(json.dumps(INV_HIERARCHICAL, indent=4, sort_keys=True))
 
-        self.assertDictEqual(inv, INV_HIERARCHICAL)
+        self.assertEqual(inv, INV_HIERARCHICAL)
 
     def _add_servers(self, ami_id, ip=None, tags={}, count=1, region='us-east-1'):
         conn = boto.ec2.EC2Connection(region=boto.ec2.get_region(region),)
