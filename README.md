@@ -1,6 +1,6 @@
 # ec2ansible: EC2 inventory generator for Ansible
 
-[![Build Status](https://travis-ci.org/hehachris/ec2ansible.svg?branch=master)](https://travis-ci.org/hehachris/ec2ansible) [![Downloads](https://img.shields.io/pypi/dm/consulate.svg)](https://pypi.python.org/pypi/ec2ansible) [![MIT License](https://img.shields.io/pypi/l/consulate.svg)](https://github.com/hehachris/ec2ansible)
+[![Build Status](https://travis-ci.org/hehachris/ec2ansible.svg?branch=master)](https://travis-ci.org/hehachris/ec2ansible) [![Downloads](https://img.shields.io/pypi/dm/ec2ansible.svg)](https://pypi.python.org/pypi/ec2ansible) [![MIT License](https://img.shields.io/pypi/l/ec2ansible.svg)](https://github.com/hehachris/ec2ansible)
 
 `ec2ansible` is a cli tool written in Python (2.7+) for generating realtime AWS EC2 inventory for [Ansible](http://docs.ansible.com/).
 
