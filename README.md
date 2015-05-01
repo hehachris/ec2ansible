@@ -1,6 +1,8 @@
 # ec2ansible: EC2 inventory generator for Ansible
 
-`ec2ansible` is a cli tool written in Python for generating realtime AWS EC2 inventory for [Ansible](http://docs.ansible.com/).
+[![Build Status](https://travis-ci.org/hehachris/ec2ansible.svg?branch=master)](https://travis-ci.org/hehachris/ec2ansible)
+
+`ec2ansible` is a cli tool written in Python (2.7+) for generating realtime AWS EC2 inventory for [Ansible](http://docs.ansible.com/).
 
 There is an [official script](http://docs.ansible.com/intro_dynamic_inventory.html#example-aws-ec2-external-inventory-script) doing the similar thing. But usually when we are provisioning a server, we only care about its **role**, eg. web server, database server, proxy server, etc, instead of its availability zone, AMI ID, nor instance type. `ec2ansible` groups your EC2 servers into Ansible inventory hierarchically based on the `Role` tag associated with them.
 
