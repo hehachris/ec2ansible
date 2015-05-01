@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.1.1'
 
 install_requires = ['boto']
 
@@ -14,7 +14,7 @@ setup(name='ec2ansible',
       long_description="""\
 """,
       classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      keywords='ansible ec2 aws',
+      keywords='ansible ec2 aws devops',
       author='Chris Lam',
       author_email='chris@knetgb.com',
       url='https://github.com/hehachris/ec2ansible',

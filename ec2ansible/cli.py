@@ -24,9 +24,8 @@ def main():
     if not os.path.isfile(init_path):
         init_path = None
 
-    obj = Ec2Ansible(default_config, init_path)
-
-    print obj.generate()
+    ec2ansible = Ec2Ansible(default_config, init_path)
+    print ec2ansible.generate()
 
 
 def parse_args():
