@@ -260,16 +260,35 @@ class Ec2InventoryGenerator(InventoryGenerator):
         return self._add_group_host(group_name, host)
 
     def _load_regions(self):
-        valid_regions = ec2.regions()
+        valid_regions = [
+            'eu-north-1',
+            'ap-south-1',
+            'eu-west-3',
+            'eu-west-2',
+            'eu-west-1',
+            'ap-northeast-2',
+            'me-south-1',
+            'ap-northeast-1',
+            'sa-east-1',
+            'ca-central-1',
+            'ap-east-1',
+            'ap-southeast-1',
+            'ap-southeast-2',
+            'eu-central-1',
+            'us-east-1',
+            'us-east-2',
+            'us-west-1',
+            'us-west-2'
+        ]
 
         if self.config['regions'] == 'all':
-            for r in valid_regions:
-                if r.name not in self.config['regions_exclude']:
-                    self.regions[self._get_region_key(r.name)] = r.name
+            for region in valid_regions:
+                if region not in self.config['regions_exclude']:
+                    self.regions[self._get_region_key(region)] = region
         else:
-            for r in valid_regions:
-                if r.name in self.config['regions']:
-                    self.regions[self._get_region_key(r.name)] = r.name
+            for region in valid_regions:
+                if region in self.config['regions']:
+                    self.regions[self._get_region_key(region)] = region
 
     def _get_region_key(self, region):
         """
